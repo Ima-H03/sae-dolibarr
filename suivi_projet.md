@@ -20,3 +20,15 @@ Test réussi avec la création d'un tiers BUT3 avec le compte user
 1- Générer des données CSV fictive client /fournisseurs
 2- importer ces données via le menu outils de dolibarr
 3- explorer en détails la gestion des contacts liés aux tiers
+
+# Séance du 28/09/2026
+
+# Fait
+- Configuration complète de Dolibarr : société "IUT", module Third Parties activé
+- Création du compte user.user avec permissions limitées à la gestion des Tiers
+- Export de la base de données (dolibarr_dump.sql) et push sur le dépôt pour synchronisation avec Imabith
+
+# À faire
+- Imabith doit importer le dump pour récupérer la config
+- Import des données CSV fictives (clients/fournisseurs) via le menu Outils
+- Réflexion sur la répartition des tâches : scripts install.sh / import_csv.sh
