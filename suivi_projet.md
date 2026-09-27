@@ -6,7 +6,7 @@
 2- Tentative d'installation de façon manuelle (paquet dolideb: abandonné
 3-Installation de docker et docker compose sur la vm
 4-création d'un docker-compose.yml : les conteneurs MariaDB et Dolibarr
-5-lancement réussi de Dolibarr via docker et accessible sur htt://localhost:8080
+5-lancement réussi de Dolibarr via docker et accessible sur htt://localhost:8081
 6-config de bas notament la société iut moduke tiers activé
 7-creation du compte utilisateur user.user avec des permissions limitées
 Test réussi avec la création d'un tiers BUT3 avec le compte user
