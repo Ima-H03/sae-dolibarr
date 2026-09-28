@@ -32,3 +32,17 @@ Test réussi avec la création d'un tiers BUT3 avec le compte user
 - Imabith doit importer le dump pour récupérer la config
 - Import des données CSV fictives (clients/fournisseurs) via le menu Outils
 - Réflexion sur la répartition des tâches : scripts install.sh / import_csv.sh
+
+
+
+# Séance du 28/09/2026 (suite)
+
+# Fait
+- Import de 15 tiers (9 clients, 6 fournisseurs) via l'assistant d'import de Dolibarr, module Vendors activé
+- Test de import_csv.sh : 6 tiers ajoutés, 21 au total, accents corrects
+- Test de backup.sh puis restore.sh : environnement supprimé (conteneurs et volumes) puis restauré, 21 tiers et comptes admin / user.user retrouvés
+
+# À faire
+- Retirer dolibarr_dump.sql du dépôt (remplacé par backup.sh)
+- Tester install.sh sur une machine vierge
+- Compléter la documentation dans docs/ et le README
