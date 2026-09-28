@@ -2,7 +2,7 @@
 
 Projet SAE 51 – Déploiement d'un ERP/CRM Dolibarr avec Docker et MariaDB.
 
-L'objectif est de fournir une installation reproductible de Dolibarr, l'import automatisé de données de Tiers ainsi qu'un mécanisme de sauvegarde et de restauration.
+L'objectif est de fournir une installation reproductible de Dolibarr, l'import automatisé des Tiers ainsi qu'un mécanisme de sauvegarde et de restauration.
 
 ## Prérequis
 
@@ -12,7 +12,7 @@ L'objectif est de fournir une installation reproductible de Dolibarr, l'import a
 - Python 3
 - curl
 
-Vérification :
+Vérifier les prérequis :
 
 ```bash
 git --version
@@ -37,19 +37,28 @@ Lancer l'installation :
 ./scripts/install.sh
 ```
 
+Le script démarre MariaDB et Dolibarr et attend que le service soit disponible.
+
 Dolibarr est accessible sur :
 
 ```text
 http://localhost:8081
 ```
 
-## Utilisation
+La configuration initiale utilise :
 
-### Importer les Tiers
+```text
+Société : NormaLink
+Pays : France
+```
 
-Les données sont stockées dans :
+## Import des Tiers
 
-`data/tiers.csv`
+Les données de démonstration sont stockées dans :
+
+```text
+data/tiers.csv
+```
 
 Lancer l'import :
 
@@ -57,14 +66,20 @@ Lancer l'import :
 ./scripts/import_csv.sh
 ```
 
-Jeu de données actuel :
+Le jeu de données contient :
 
-- 21 Tiers
-- 14 clients
-- 7 fournisseurs
-- 0 double catégorie
+```text
+21 Tiers
+14 clients
+7 fournisseurs
+0 double catégorie
+```
 
-### Sauvegarder l'environnement
+Le script peut être relancé sans créer de doublons pour les Tiers déjà présents.
+
+## Sauvegarde
+
+Créer une sauvegarde :
 
 ```bash
 ./scripts/backup.sh
@@ -72,9 +87,21 @@ Jeu de données actuel :
 
 Les sauvegardes sont stockées dans :
 
-`~/SAE51-backups/`
+```text
+~/SAE51-backups/
+```
 
-### Restaurer une sauvegarde
+Une sauvegarde contient :
+
+```text
+dolibarr.sql
+dolibarr_documents.tar.gz
+sha256sums.txt
+```
+
+## Restauration
+
+Restaurer une sauvegarde :
 
 ```bash
 ./scripts/restore.sh <répertoire_de_sauvegarde>
@@ -86,23 +113,7 @@ Exemple :
 ./scripts/restore.sh ~/SAE51-backups/2026-09-28_17-53-25
 ```
 
-## Configuration
-
-La configuration Docker se trouve dans :
-
-`docker-compose.yml`
-
-L'environnement utilise notamment :
-
-- Dolibarr
-- MariaDB
-- le port `8081`
-- la société `NormaLink`
-- les modules nécessaires au projet
-
-Les données de démonstration sont fournies dans :
-
-`data/tiers.csv`
+Le script vérifie l'intégrité de la sauvegarde avant de restaurer la base et les documents.
 
 ## Commandes Docker utiles
 
@@ -130,19 +141,19 @@ Redémarrer les services :
 docker compose restart
 ```
 
-Supprimer les conteneurs :
+Arrêter et supprimer les conteneurs :
 
 ```bash
 docker compose down
 ```
 
-Supprimer les conteneurs et les volumes :
+Supprimer également les volumes :
 
 ```bash
 docker compose down -v
 ```
 
-> Attention : `docker compose down -v` supprime les volumes contenant les données.
+> Attention : `docker compose down -v` supprime les volumes contenant les données de l'application.
 
 Afficher les logs :
 
@@ -151,34 +162,59 @@ docker logs dolibarr-app
 docker logs dolibarr-db
 ```
 
-## Structure du projet
-
-```text
-sae-dolibarr/
-├── data/               # Données CSV
-├── docs/               # Documentation technique
-├── scripts/            # Scripts d'automatisation
-├── sources/            # Sources utilisées
-├── tests/              # Tests
-├── docker-compose.yml  # Architecture Docker
-├── README.md           # Présentation et utilisation
-├── sources.md          # Sources documentaires
-└── suivi_projet.md     # Journal de bord
-```
-
 ## Scripts
 
 | Script | Fonction |
 |---|---|
-| `scripts/install.sh` | Installation de l'environnement |
-| `scripts/import_csv.sh` | Import des Tiers |
-| `scripts/backup.sh` | Sauvegarde |
-| `scripts/restore.sh` | Restauration |
+| `scripts/install.sh` | Installation et démarrage de l'environnement |
+| `scripts/import_csv.sh` | Import des Tiers depuis le CSV |
+| `scripts/backup.sh` | Sauvegarde de la base et des documents |
+| `scripts/restore.sh` | Restauration d'une sauvegarde |
 
-## Documentation complémentaire
+## Configuration
 
-- `docs/guide-technique.md` : fonctionnement technique du projet
-- `docs/procedure-pra.md` : procédure de sauvegarde et restauration
-- `sources.md` : sources documentaires
-- `suivi_projet.md` : journal de bord
+La configuration de l'environnement est définie dans :
+
+```text
+docker-compose.yml
+```
+
+Les données de démonstration sont définies dans :
+
+```text
+data/tiers.csv
+```
+
+## Structure du projet
+
+```text
+sae-dolibarr/
+├── data/
+│   └── tiers.csv
+├── scripts/
+│   ├── install.sh
+│   ├── import_csv.sh
+│   ├── backup.sh
+│   └── restore.sh
+├── tests/
+├── docker-compose.yml
+├── README.md
+├── sources.md
+└── suivi_projet.md
+```
+
+## Sources
+
+Les sources documentaires utilisées pour le projet sont regroupées dans :
+
+```text
+sources.md
+```
+
+## Suivi du projet
+
+Le journal de bord est disponible dans :
+
+```text
+suivi_projet.md
 
