@@ -51,16 +51,13 @@ docker compose up -d db
 echo
 echo "Attente de MariaDB..."
 
-until docker exec dolibarr-db mariadb-admin \
-    -h localhost \
-    -u dolibarr \
-    -p'dolibarrpass' \
-    --silent ping >/dev/null 2>&1
+until docker exec -e MYSQL_PWD='dolibarrpass' dolibarr-db \
+    mariadb -u dolibarr dolibarr -e "SELECT 1;" >/dev/null 2>&1
 do
     sleep 2
 done
 
-echo "MariaDB est opérationnel."
+echo "MariaDB est opérationnel et le compte dolibarr est accessible."
 
 echo
 echo "[3/5] Restauration de la base..."
