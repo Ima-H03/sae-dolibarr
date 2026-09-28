@@ -1,3 +1,7 @@
-Nom du tiers* (s.nom),État* (s.status),Code pays (s.fk_pays),Client* (s.client),Fournisseur* (s.fournisseur)
-Entreprise Test SAE,1,FR,1,0
-Client Demo SAE,1,FR,1,0
+Nom du tiers* (s.nom),État* (s.status),Code pays (s.fk_pays),Client* (s.client),Fournisseur* (s.fournisseur),Adresse (s.address),Code postal (s.zip),Ville (s.town),Téléphone (s.phone),Email (s.email),Clé import (s.import_key)
+Entreprise Test SAE,1,FR,1,0,12 rue de la République,76000,Rouen,0235123456,contact@entreprise-test-sae.fr,SAE26-0001
+Client Demo SAE,1,FR,1,0,8 avenue des Canadiens,76100,Rouen,0235987654,demo@client-sae.fr,SAE26-0002
+Fournisseur Réseau 76,1,FR,0,1,25 rue du Général Leclerc,76120,Le Grand-Quevilly,0235011122,contact@reseau76.fr,SAE26-0003
+Normandie Cloud Services,1,FR,1,1,4 rue Pierre Corneille,76000,Rouen,0235334455,contact@normandie-cloud.fr,SAE26-0004
+CyberSecure Rouen,1,FR,0,1,16 rue Jeanne d'Arc,76000,Rouen,0235667788,contact@cybersecure-rouen.fr,SAE26-0005
+Elbeuf Solutions,1,FR,1,0,10 rue de la République,76500,Elbeuf,0235778899,contact@elbeuf-solutions.fr,SAE26-0006
