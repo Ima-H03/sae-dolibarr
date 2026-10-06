@@ -1,7 +1,22 @@
 Nom du tiers* (s.nom),État* (s.status),Code pays (s.fk_pays),Client* (s.client),Fournisseur* (s.fournisseur),Adresse (s.address),Code postal (s.zip),Ville (s.town),Téléphone (s.phone),Email (s.email),Clé import (s.import_key)
-Entreprise Test SAE,1,FR,1,0,12 rue de la République,76000,Rouen,0235123456,contact@entreprise-test-sae.fr,SAE26-0001
-Client Demo SAE,1,FR,1,0,8 avenue des Canadiens,76100,Rouen,0235987654,demo@client-sae.fr,SAE26-0002
-Fournisseur Réseau 76,1,FR,0,1,25 rue du Général Leclerc,76120,Le Grand-Quevilly,0235011122,contact@reseau76.fr,SAE26-0003
-Normandie Cloud Services,1,FR,1,1,4 rue Pierre Corneille,76000,Rouen,0235334455,contact@normandie-cloud.fr,SAE26-0004
-CyberSecure Rouen,1,FR,0,1,16 rue Jeanne d'Arc,76000,Rouen,0235667788,contact@cybersecure-rouen.fr,SAE26-0005
-Elbeuf Solutions,1,FR,1,0,10 rue de la République,76500,Elbeuf,0235778899,contact@elbeuf-solutions.fr,SAE26-0006
+Entreprise Test SAE,1,FR,1,0,12 rue de la République,76000,Rouen,0235000001,contact@entreprise-test-sae.fr,SAE26-0001
+Client Demo SAE,1,FR,1,0,8 avenue des Canadiens,76100,Rouen,0235000002,demo@client-sae.fr,SAE26-0002
+Fournisseur Réseau 76,1,FR,0,1,25 rue du Général Leclerc,76120,Le Grand-Quevilly,0235000003,contact@reseau76.fr,SAE26-0003
+Normandie Cloud Services,1,FR,1,0,4 rue Pierre Corneille,76000,Rouen,0235000004,contact@normandie-cloud.fr,SAE26-0004
+CyberSecure Rouen,1,FR,0,1,16 rue Jeanne d'Arc,76000,Rouen,0235000005,contact@cybersecure-rouen.fr,SAE26-0005
+Elbeuf Solutions,1,FR,1,0,10 rue de la République,76500,Elbeuf,0235000006,contact@elbeuf-solutions.fr,SAE26-0006
+Seine Informatique,1,FR,1,0,2 rue du Général Giraud,76100,Rouen,0235000007,contact@seine-informatique.fr,SAE26-0007
+Rouen Digital Services,1,FR,1,0,18 rue Beauvoisine,76000,Rouen,0235000008,contact@rouen-digital.fr,SAE26-0008
+Normandie Bureautique,1,FR,1,0,7 rue du Gros Horloge,76000,Rouen,0235000009,contact@normandie-bureautique.fr,SAE26-0009
+Elbeuf Télécom,1,FR,1,0,14 rue du Neubourg,76500,Elbeuf,0235000010,contact@elbeuf-telecom.fr,SAE26-0010
+Métropole Réseaux,1,FR,0,1,21 rue Jeanne d'Arc,76000,Rouen,0235000011,contact@metropole-reseaux.fr,SAE26-0011
+Seine Data Services,1,FR,0,1,5 rue aux Ours,76000,Rouen,0235000012,contact@seine-data.fr,SAE26-0012
+Normandie Matériel IT,1,FR,0,1,9 rue des Emmurées,76100,Rouen,0235000013,contact@normandie-materiel.fr,SAE26-0013
+Elbeuf Réseaux Pro,1,FR,0,1,6 rue du 8 Mai 1945,76500,Elbeuf,0235000014,contact@elbeuf-reseaux.fr,SAE26-0014
+Rouen Infrastructure,1,FR,0,1,11 rue Saint-Sever,76100,Rouen,0235000015,contact@rouen-infrastructure.fr,SAE26-0015
+Campus IT Services,1,FR,1,0,3 rue de la Mare du Parc,76800,Saint-Étienne-du-Rouvray,0235000016,contact@campus-it.fr,SAE26-0016
+Normandie Solutions,1,FR,1,0,22 rue de la République,76000,Rouen,0235000017,contact@normandie-solutions.fr,SAE26-0017
+Seine Cyber Services,1,FR,1,0,13 rue du Faubourg Martainville,76000,Rouen,0235000018,contact@seine-cyber.fr,SAE26-0018
+Elbeuf Consulting,1,FR,1,0,17 rue des Martyrs,76500,Elbeuf,0235000019,contact@elbeuf-consulting.fr,SAE26-0019
+Rouen Services Numériques,1,FR,1,0,24 rue de Crosne,76000,Rouen,0235000020,contact@rouen-services.fr,SAE26-0020
+Normandie Tech Assistance,1,FR,1,0,15 rue de la Champmeslé,76000,Rouen,0235000021,contact@normandie-tech.fr,SAE26-0021

@@ -25,6 +25,9 @@ services:
       DOLI_DB_NAME: dolibarr
       DOLI_DB_USER: dolibarr
       DOLI_DB_PASSWORD: dolibarrpass
+      DOLI_COMPANY_NAME: NormaLink
+      DOLI_COMPANY_COUNTRYCODE: FR
+      DOLI_ENABLE_MODULES: Societe,Fournisseur,Import
     volumes:
       - dolibarr_documents:/var/www/documents
 
