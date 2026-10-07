@@ -3,6 +3,7 @@
 set -e
 
 BACKUP_DIR="$1"
+DOLIBARR_URL="http://localhost:8081"
 
 if [ -z "$BACKUP_DIR" ]; then
     echo "Usage : $0 <dossier_de_sauvegarde>"
@@ -74,7 +75,23 @@ docker compose up -d dolibarr
 
 echo
 echo "Attente de Dolibarr..."
-sleep 5
+
+MAX_ATTEMPTS=60
+ATTEMPT=1
+
+until curl -fsS --max-time 3 "$DOLIBARR_URL" >/dev/null 2>&1
+do
+    if [ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]; then
+        echo "ERREUR : Dolibarr ne répond pas après 120 secondes."
+        docker compose ps
+        exit 1
+    fi
+
+    sleep 2
+    ATTEMPT=$((ATTEMPT + 1))
+done
+
+echo "Dolibarr est accessible."
 
 echo
 echo "[5/5] Restauration des documents..."
