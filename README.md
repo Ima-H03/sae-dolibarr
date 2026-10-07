@@ -52,6 +52,14 @@ Société : NormaLink
 Pays : France
 ```
 
+Les modules suivants sont activés automatiquement :
+
+```text
+Societe
+Fournisseur
+Import
+```
+
 ## Import des Tiers
 
 Les données de démonstration sont stockées dans :
@@ -196,7 +204,6 @@ sae-dolibarr/
 │   ├── import_csv.sh
 │   ├── backup.sh
 │   └── restore.sh
-├── tests/
 ├── docker-compose.yml
 ├── README.md
 ├── sources.md
@@ -217,4 +224,11 @@ Le journal de bord est disponible dans :
 
 ```text
 suivi_projet.md
+```
 
+## Auteurs
+
+- Algor Zoubabela
+- Imabith Houngbo
+
+Projet réalisé dans le cadre de la SAE 51 – BUT Réseaux & Télécommunications, IUT Rouen.
